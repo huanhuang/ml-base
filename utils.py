@@ -10,6 +10,7 @@ def fl_score(logits,labels):
     logits-- 预测值
     labels -- 真实值
     '''
+    logits = np.squeeze(logits)
     class_list = set(labels)
     for y in class_list:
         TP = np.sum(((labels == logits) & (logits == y)))
